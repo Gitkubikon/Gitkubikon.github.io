@@ -15,13 +15,8 @@ const hero: {
 	links: [
 		{ label: 'GitHub', href: 'https://github.com/Gitkubikon', icon: 'i-carbon-logo-github' },
 		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/nikita-friesen', icon: 'i-carbon-logo-linkedin' },
-		{
-			label: 'STEM Globe',
-			href: 'https://gitkubikon.github.io/STEMGlobe/',
-			icon: 'i-carbon-globe'
-		},
-		{ label: 'AICO Flow', href: 'https://landing.aicoflow.xyz', icon: 'i-carbon-idea' },
-		{ label: 'Email', href: 'mailto:nikitafriesen74@gmail.com', icon: 'i-carbon-at' },
+		{ label: 'AICO Flow', href: 'https://aicoflow.xyz', icon: 'i-carbon-idea' },
+		{ label: 'Email', href: 'mailto:nikita@aicoflow.com', icon: 'i-carbon-at' },
 		{ label: 'Phone', href: 'tel:+4915158152571', icon: 'i-carbon-phone' }
 	]
 };
