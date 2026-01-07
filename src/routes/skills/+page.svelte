@@ -35,16 +35,19 @@
 					</div>
 					<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 						{#each group.items as item (item.slug)}
-							<FancyCard color={item.color} href={href(`/skills/${item.slug}`)}>
-								<CardContent class="flex flex-col gap-4">
-									<div
-										class="flex h-16 w-16 items-center justify-center self-start rounded-2xl border border-border/70 bg-card/90"
-									>
-										<AssetIcon asset={item.logo} size="2.4rem" />
-									</div>
-									<CardTitle>{item.name}</CardTitle>
-								</CardContent>
-							</FancyCard>
+							<a href={href(`/skills/${item.slug}`)} class="glass glass-hover group flex flex-col items-center gap-4 rounded-[1.5rem] p-6">
+								<div class="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 transition-transform group-hover:scale-110">
+									<AssetIcon asset={item.logo} size="2rem" />
+								</div>
+								<div class="flex flex-col items-center gap-0.5">
+									<h3 class="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors text-center">
+										{item.name}
+									</h3>
+									<span class="text-[8px] font-bold uppercase tracking-[0.2em] text-muted-foreground/30">
+										Expertise
+									</span>
+								</div>
+							</a>
 						{/each}
 					</div>
 				</div>

@@ -16,44 +16,47 @@
 	import BaseData from '$lib/data/base';
 	import NavBarData from '$lib/data/nav-bar';
 	import { href } from '$lib/utils';
+	import { page } from '$app/stores';
 	import { mode, toggleMode } from 'mode-watcher';
 
 	let isDarkMode = $derived($mode === 'dark');
 </script>
 
-<div class="fixed inset-x-0 top-4 z-40 flex justify-center px-4 sm:px-6">
+<div class="fixed inset-x-0 top-6 z-50 flex justify-center px-6">
 	<nav
-		class="flex w-full max-w-5xl items-center gap-3 rounded-2xl border border-border/80 bg-card/95 px-4 py-2.5 shadow-sm backdrop-blur supports-[backdrop-filter]:backdrop-blur-xl transition-colors duration-200"
+		class="glass flex items-center gap-2 rounded-full px-6 py-2.5 transition-all duration-500 ring-1 ring-white/5 shadow-2xl"
 	>
-		<div class="flex flex-1 items-center gap-3">
+		<div class="flex items-center">
 			<a
 				href={href('/')}
-				class="flex items-center gap-3 rounded-full px-2 py-1 text-sm font-semibold text-foreground/80 transition-colors hover:text-foreground"
+				class="group flex h-11 items-center gap-3 rounded-full px-3 transition-all hover:bg-primary/5"
 			>
 				<div
-					class="flex h-9 w-9 items-center justify-center rounded-xl border border-border/70 bg-primary/80 text-primary-foreground"
+					class="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/80 transition-transform group-hover:scale-105 shadow-sm"
 				>
-					<Icon icon={NavBarData.left.icon} className="text-lg" />
+					<Icon icon={NavBarData.left.icon} className="text-base text-primary-foreground" />
 				</div>
-				<H4 className="hidden text-sm font-semibold tracking-tight sm:block">
+				<span class="text-xs font-bold uppercase tracking-wider text-foreground/80 group-hover:text-primary">
 					{NavBarData.left.title}
-				</H4>
-				<Large className="text-sm font-semibold sm:hidden">{BaseData.fullName}</Large>
+				</span>
 			</a>
 		</div>
 
-		<div class="hidden flex-[2] flex-row items-center justify-center gap-1 sm:flex">
+		<div class="mx-2 h-4 w-[1px] bg-border/20"></div>
+
+		<div class="hidden flex-row items-center gap-0.5 sm:flex">
 			{#each NavBarData.items as item}
 				<a href={href(item.href)}>
 					<Tooltip>
 						<TooltipTrigger>
-							<Button
-								class="flex flex-row items-center justify-center gap-2 px-4 text-sm font-medium text-foreground/70 hover:text-foreground"
-								variant="ghost"
+							<div
+								class="flex h-10 items-center gap-2 rounded-full px-4 text-[11px] font-bold uppercase tracking-wider transition-all hover:bg-primary/5 hover:text-primary"
+								class:text-primary={$page.url.pathname === item.href}
+								class:text-muted-foreground={$page.url.pathname !== item.href}
 							>
 								<Icon icon={item.icon} className="text-lg" />
-								<div class="hidden lg:block">{item.title}</div>
-							</Button>
+								<span class="hidden lg:block">{item.title}</span>
+							</div>
 						</TooltipTrigger>
 						<TooltipContent side="bottom" class="lg:hidden">
 							{item.title}
@@ -63,15 +66,20 @@
 			{/each}
 		</div>
 
-		<div class="hidden flex-1 flex-row items-center justify-end gap-2 sm:flex">
+		<div class="mx-2 h-4 w-[1px] bg-border/20 hidden sm:block"></div>
+
+		<div class="hidden flex-row items-center gap-1 sm:flex">
 			<a href={href('/search')}>
-				<Button variant="ghost" class="text-lg">
-					<Icon icon="i-carbon-search" />
-				</Button>
+				<div class="flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground/60 transition-all hover:bg-primary/5 hover:text-primary">
+					<Icon icon="i-carbon-search" className="text-xl" />
+				</div>
 			</a>
-			<Button variant="ghost" class="text-lg" on:click={toggleMode}>
-				<Icon icon={isDarkMode ? 'i-carbon-moon' : 'i-carbon-sun'} />
-			</Button>
+			<button
+				onclick={toggleMode}
+				class="flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground/60 transition-all hover:bg-primary/5 hover:text-primary"
+			>
+				<Icon icon={isDarkMode ? 'i-carbon-sun' : 'i-carbon-moon'} className="text-xl" />
+			</button>
 		</div>
 
 		<div class="flex flex-1 flex-row items-center justify-end gap-1 sm:hidden">

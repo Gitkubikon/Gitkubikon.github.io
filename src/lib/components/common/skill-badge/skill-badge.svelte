@@ -11,11 +11,11 @@
 	<TooltipTrigger>
 		<a
 			href={href(`/skills/${skill.slug}`)}
-			class="group inline-flex size-12 items-center justify-center rounded-xl border border-border/70 bg-card/90 text-foreground transition-colors duration-200 hover:border-border hover:bg-card"
+			class="group inline-flex size-10 items-center justify-center rounded-xl bg-background/40 text-foreground transition-all duration-200 hover:bg-primary/10 hover:text-primary ring-1 ring-white/5 hover:ring-primary/20 shadow-sm"
 		>
 			<AssetIcon
 				asset={skill.logo}
-				size="2rem"
+				size="1.5rem"
 				class="transition-transform duration-200 group-hover:scale-110"
 			/>
 		</a>

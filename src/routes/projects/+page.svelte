@@ -45,28 +45,32 @@
 </script>
 
 <SearchPage title={ProjectsData.title} {onSearch}>
-	<div class="flex flex-1 flex-col gap-8">
-		<div
-			class="flex flex-row flex-wrap gap-2 rounded-2xl border border-border/70 bg-card/95 p-4 shadow-sm"
-		>
+	<div class="flex flex-col gap-10">
+		<div class="flex flex-wrap items-center gap-3">
+			<div class="flex items-center gap-2 pr-4 text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground/30 border-r border-border/20 mr-1">
+				<Icon icon="i-carbon-filter" />
+				<span>Filter</span>
+			</div>
 			{#each filters as it (it.slug)}
 				<Toggle
 					pressed={it.isSelected}
 					variant="outline"
-					class="flex flex-row items-center gap-2 rounded-full px-4 text-sm font-medium text-foreground/70 hover:text-foreground"
+					class="h-9 rounded-xl border-none bg-background/40 px-5 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary data-[state=on]:bg-primary/20 data-[state=on]:text-primary data-[state=on]:ring-1 data-[state=on]:ring-primary/30"
 					on:click={() => toggleSelected(it.slug)}
 				>
-					{#if it.isSelected}
-						<Icon icon="i-carbon-close" />
-					{/if}
-					{it.name}</Toggle
-				>
+					<div class="flex items-center gap-2">
+						{#if it.isSelected}
+							<Icon icon="i-carbon-checkmark" />
+						{/if}
+						{it.name}
+					</div>
+				</Toggle>
 			{/each}
 		</div>
 		{#if result.length === 0}
 			<EmptyResult />
 		{:else}
-			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+			<div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
 				{#each result as it (it.slug)}
 					<ProjectCard project={it} />
 				{/each}

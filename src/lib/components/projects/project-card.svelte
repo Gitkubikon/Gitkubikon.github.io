@@ -30,76 +30,52 @@ import Button from '../ui/button/button.svelte';
 	const hasExtraLinks = $derived(project.links.length > 1);
 </script>
 
-<FancyCard color={project.color} class="flex h-full flex-col">
-	<CardHeader class="flex flex-col gap-4 pb-4">
+<div class="glass glass-hover group flex h-full flex-col overflow-hidden rounded-[1.5rem] p-6">
+	<div class="flex flex-col gap-5">
 		<div class="flex items-start gap-3">
-			<Avatar class="h-12 w-12 rounded-2xl">
-				<AvatarFallback class="rounded-2xl border border-border/70 bg-secondary/80 text-foreground">
-					<AssetIcon asset={project.logo ?? Assets.Unknown} size="1.8rem" />
-				</AvatarFallback>
-			</Avatar>
-			<div class="flex flex-1 flex-col gap-3">
-				<div class="flex items-start justify-between gap-2">
-					<CardTitle class="min-w-0 flex-1 text-lg font-semibold leading-tight text-foreground">
-						<a
-							href={href(`/projects/${project.slug}`)}
-							class="block truncate text-foreground transition-colors hover:text-primary"
-						>
+			<div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/5 border border-primary/10">
+				<AssetIcon asset={project.logo ?? Assets.Unknown} size="1.5rem" />
+			</div>
+			<div class="flex flex-1 flex-col gap-0.5">
+				<div class="flex items-center justify-between gap-4">
+					<h3 class="line-clamp-1 text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+						<a href={href(`/projects/${project.slug}`)}>
 							{project.name}
 						</a>
-					</CardTitle>
-					{#if project.links.length > 0 || hasExtraLinks}
-						<div class="flex shrink-0 items-center gap-1">
-							{#if project.links.length > 0}
-								<ButtonLink link={project.links[0]} />
-							{/if}
-							{#if hasExtraLinks}
-								<DropdownMenu>
-									<DropdownMenuTrigger>
-										<Button size="icon" variant="ghost" class="text-muted-foreground">
-											<Icon icon="i-carbon-overflow-menu-vertical" />
-										</Button>
-									</DropdownMenuTrigger>
-									<DropdownMenuContent class="w-44">
-										{#each project.links.slice(1) as link (link.to)}
-											<a href={link.to} target={'_blank'}>
-												<DropdownMenuItem>
-													{link.label}
-												</DropdownMenuItem>
-											</a>
-										{/each}
-									</DropdownMenuContent>
-								</DropdownMenu>
-							{/if}
+					</h3>
+					{#if project.links.length > 0}
+						<div class="flex items-center gap-2">
+							<a 
+								href={project.links[0].to} 
+								target="_blank"
+								class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all"
+							>
+								<Icon icon="i-carbon-link" className="text-sm" />
+							</a>
 						</div>
 					{/if}
 				</div>
-				<div class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-					<div class="flex items-center gap-2">
-						<Icon icon="i-carbon-assembly-cluster" className="text-base" />
-						<span>{project.type}</span>
-					</div>
-					<div class="flex items-center gap-2">
-						<Icon icon="i-carbon-time" className="text-base" />
-						<span>{exactDuration}</span>
-					</div>
+				<div class="flex flex-wrap items-center gap-3 text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
+					<span>{project.type}</span>
+					<span class="h-1 w-1 rounded-full bg-border/50"></span>
+					<span>{exactDuration}</span>
 				</div>
 			</div>
 		</div>
-		<Separator class="bg-border/70" />
-	</CardHeader>
-	<CardContent class="flex flex-1 flex-col gap-5 pt-0">
-		<p class="text-sm leading-relaxed text-muted-foreground">
-			{ellipsify(project.shortDescription, 120)}
+
+		<p class="line-clamp-3 text-xs leading-relaxed text-muted-foreground/70">
+			{project.shortDescription}
 		</p>
-		<div class="flex items-center justify-between text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
-			<span>{from}</span>
-			<span>{to}</span>
-		</div>
-		<div class="flex flex-wrap gap-2 pt-2">
+
+		<div class="flex flex-wrap gap-1.5 pt-1">
 			{#each project.skills as skill (skill.slug)}
 				<SkillBadge {skill} />
 			{/each}
 		</div>
-	</CardContent>
-</FancyCard>
+		
+		<div class="mt-auto flex items-center justify-between border-t border-border/10 pt-3 text-[8px] font-bold uppercase tracking-[0.2em] text-muted-foreground/30">
+			<span>{from} — {to}</span>
+			<Icon icon="i-carbon-arrow-right" className="opacity-0 group-hover:opacity-100 transition-opacity" />
+		</div>
+	</div>
+</div>

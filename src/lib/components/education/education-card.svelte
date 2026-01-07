@@ -12,46 +12,50 @@
 
 	const { it }: { it: Education } = $props();
 
-	const exactDuration = computeExactDuration(it.period.from, it.period.to);
+	const exactDuration = $derived(computeExactDuration(it.period.from, it.period.to));
 	const from = $derived(getMonthAndYear(it.period.from));
 	const to = $derived(getMonthAndYear(it.period.to));
 	const period = $derived(`${from} - ${to}`);
-	const location = `${it.organization}, ${it.location}`;
+	const location = $derived(`${it.organization}, ${it.location}`);
 </script>
 
-<FancyCard href={href(`/education/${it.slug}`)}>
-	<CardContent class="flex flex-col gap-6 sm:flex-row sm:items-start">
-		<Avatar class="h-12 w-12 rounded-2xl">
-			<AvatarFallback class="rounded-2xl border border-border/70 bg-secondary/80 text-foreground">
-				<AssetIcon asset={it.logo ?? Assets.Unknown} size="1.8rem" />
-			</AvatarFallback>
-		</Avatar>
-		<div class="flex flex-1 flex-col gap-4">
-			<CardTitle class="text-lg font-semibold text-foreground">{it.degree}</CardTitle>
-			<div class="grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-				<div class="flex items-center gap-2">
-					<Icon icon="i-carbon-location" className="text-base" />
-					<span>{location}</span>
-				</div>
-				<div class="flex items-center gap-2">
-					<Icon icon="i-carbon-calendar" className="text-base" />
-					<span>{period}</span>
-				</div>
-				<div class="flex items-center gap-2">
-					<Icon icon="i-carbon-time" className="text-base" />
-					<span>{exactDuration}</span>
-				</div>
-			</div>
-			<p class="text-sm leading-relaxed text-muted-foreground">
-				{ellipsify(it.shortDescription, 150)}
-			</p>
-			<div class="flex flex-wrap gap-2">
-				{#each it.subjects as subject (subject)}
-					<Badge variant="secondary" class="text-[10px] uppercase tracking-[0.3em]">
-						{subject}
-					</Badge>
-				{/each}
+<div class="glass glass-hover group flex flex-col gap-4 rounded-xl p-5">
+	<div class="flex items-start gap-3">
+		<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 border border-primary/10 transition-transform group-hover:scale-105">
+			<AssetIcon asset={it.logo ?? Assets.Unknown} size="1.25rem" />
+		</div>
+		<div class="flex flex-1 flex-col gap-0.5">
+			<h3 class="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+				<a href={href(`/education/${it.slug}`)}>
+					{it.degree}
+				</a>
+			</h3>
+			<div class="text-[10px] font-semibold text-muted-foreground/50">
+				{it.organization}
 			</div>
 		</div>
-	</CardContent>
-</FancyCard>
+	</div>
+
+	<p class="text-[11px] leading-relaxed text-muted-foreground/60">
+		{ellipsify(it.shortDescription, 140)}
+	</p>
+
+	<div class="flex flex-wrap gap-1">
+		{#each it.subjects as subject (subject)}
+			<Badge variant="secondary" class="text-[8px] uppercase font-bold tracking-wider bg-primary/5 text-primary border-none px-1.5 py-0.5">
+				{subject}
+			</Badge>
+		{/each}
+	</div>
+
+	<div class="mt-auto flex items-center justify-between border-t border-border/10 pt-3 text-[8px] font-bold uppercase tracking-wider text-muted-foreground/30">
+		<div class="flex items-center gap-2">
+			<Icon icon="i-carbon-calendar" />
+			<span>{period}</span>
+		</div>
+		<div class="flex items-center gap-2">
+			<Icon icon="i-carbon-location" />
+			<span>{it.location}</span>
+		</div>
+	</div>
+</div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Input from '$lib/components/ui/input/input.svelte';
+	import Icon from '$lib/components/ui/icon/icon.svelte';
 	import { onMount, type Snippet } from 'svelte';
 	import TitledPage from '../titled-page/titled-page.svelte';
 
@@ -38,10 +38,16 @@
 </script>
 
 <TitledPage {title}>
-	<div
-		class="flex flex-col gap-3 rounded-2xl border border-border/70 bg-card/95 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6"
-	>
-		<Input placeholder="Search..." bind:value={query} class="h-12 flex-1" />
+	<div class="flex flex-col gap-10">
+		<div class="glass group flex items-center gap-4 overflow-hidden rounded-xl border-none bg-background/40 px-5 focus-within:bg-background/60 transition-all ring-1 ring-white/5 focus-within:ring-primary/30 shadow-md">
+			<Icon icon="i-carbon-search" className="text-muted-foreground/40 text-xl transition-colors group-focus-within:text-primary/60" />
+			<input
+				type="text"
+				placeholder="Search projects..."
+				bind:value={query}
+				class="h-12 w-full border-none bg-transparent py-3 text-base font-medium text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:ring-0"
+			/>
+		</div>
+		{@render children()}
 	</div>
-	{@render children()}
 </TitledPage>
