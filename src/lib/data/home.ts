@@ -11,7 +11,7 @@ const hero: {
 } = {
 	title: `${BaseData.fullName},`,
 	description:
-		'Product engineer with experience in dependable software for drone fleets and connected operations teams. Currently at #mitdenkt, also splitting time between GRIT Racing & GRIT Auto, and my own AICO Flow experiments - merging geospatial UX, telephony plumbing, and pragmatic AI so crews get signals they can act on.',
+		'I solo-built a production SaaS for AI voice agents — from blank repo to paying customers. I build complete platforms, not features. Everything from SIP telephony to Kubernetes, brand design to real-time WebSocket bridges. Currently founding AICOYO, co-running NNFlow, and building race ops tooling for GRIT Racing.',
 	links: [
 		{ label: 'GitHub', href: 'https://github.com/Gitkubikon', icon: 'i-carbon-logo-github' },
 		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/nikita-friesen', icon: 'i-carbon-logo-linkedin' },

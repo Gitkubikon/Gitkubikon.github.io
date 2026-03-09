@@ -1,6 +1,6 @@
 const firstName = 'Nikita';
 const lastName = 'Friesen';
-const suffix = 'Product Engineer & Drone Ops Developer';
+const suffix = 'Founding Engineer · Voice AI · DevOps';
 
 const BaseData = {
 	firstName,

@@ -6,13 +6,48 @@ const title = 'Experience';
 
 const items: Array<Experience> = [
 	{
+		slug: 'aicoyo-founder',
+		company: 'AICOYO',
+		description: `- Solo-built a production SaaS for AI voice agents from scratch. 2 paying customers, 80%+ margin, 100% uptime.\n- End-to-end real-time voice pipeline: STT → LLM → TTS with sub-500ms latency via LiveKit, WebRTC, and SIP telephony.\n- Visual flow builder with 15+ node types — drag-and-drop for operators, full programmatic control for engineers.\n- Multi-tenant platform with RBAC, live call monitoring, warm transfer (AI ↔ human), and vector memory via pgvector.\n- Full infrastructure ownership: Docker/K8s with on-prem deployment, production-ready from bare metal in minutes.`,
+		contract: ContractType.SelfEmployed,
+		type: 'Voice AI SaaS',
+		location: 'Ingolstadt, Bavaria, Germany',
+		period: { from: new Date(2024, 3, 1) },
+		skills: getSkills(
+			'ts',
+			'svelte',
+			'bun-node',
+			'fastify',
+			'data-stores',
+			'docker',
+			'kubernetes',
+			'ansible',
+			'ci-cd',
+			'linux',
+			'livekit',
+			'telephony',
+			'oauth',
+			'websockets',
+			'ai-automation'
+		),
+		name: 'Founder & Solo Engineer',
+		color: '#145B7A',
+		links: [
+			{ to: 'https://aicoflow.com', label: 'AICOYO', newTab: true },
+			{ to: 'https://www.linkedin.com/in/nikita-friesen', label: 'LinkedIn', newTab: true },
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
+		],
+		logo: Assets.AiAutomation,
+		shortDescription: 'Production SaaS for AI voice agents. Solo-built from scratch. Paying customers.'
+	},
+	{
 		slug: 'mitdenkt-devops',
 		company: '#mitdenkt',
-		description: `- Linked ZVT payment terminals with scheduling and reporting through a hardened WebSocket bridge between mitdenkt boxes and Bun/Fastify services.\n- Designed and shipped the Logto-powered SSO admin console that gives operations teams clear control over tenants, roles, and audit trails.\n- Maintain Dockerised Linux deployments across Hetzner Kubernetes clusters and on-prem telephony hardware with Ansible playbooks, observability, and CI/CD.\n- Prototyping AI call assistants with guardrails that hand off to humans whenever confidence drops.`,
+		description: `- Built a ZVT payment terminal integration — custom WebSocket bridge between field POS hardware and Bun/Fastify backend.\n- Shipped Logto-powered SSO with admin console for tenant provisioning, RBAC, and audit trails.\n- Ran Docker + Ansible deployments across Hetzner K8s clusters and on-prem telephony boxes with full CI/CD.\n- Built AI calling agents that handle routine calls and hand off to humans when confidence drops.`,
 		contract: ContractType.FullTime,
 		type: 'Full-stack & DevOps Engineering',
 		location: 'Ingolstadt, Bavaria, Germany',
-		period: { from: new Date(2024, 8, 1) },
+		period: { from: new Date(2024, 8, 1), to: new Date(2026, 1, 1) },
 		skills: getSkills(
 			'ts',
 			'bun-node',
@@ -33,23 +68,40 @@ const items: Array<Experience> = [
 		links: [
 			{ to: 'https://mitdenkt.de/', label: 'mitdenkt', newTab: true },
 			{ to: 'https://www.linkedin.com/in/nikita-friesen', label: 'LinkedIn', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.CiCd,
-		shortDescription: "Keeping mitdenkt's payments, telephony, and SSO tooling dependable for service teams."
+		shortDescription: 'Payment terminals, SSO, telephony, and AI calling agents for field service teams.'
+	},
+	{
+		slug: 'nnflow-cofounder',
+		company: 'NNFlow',
+		description: `- IT consulting agency with Niklas Röthlingshöfer. Enterprise process optimization and automation.\n- Client: Canzler & Bergmeier (patent law) — automated patent figure generation with Patent-Lektor.\n- Full-stack consulting across infrastructure, AI tooling, and workflow automation.`,
+		contract: ContractType.SelfEmployed,
+		type: 'IT Consulting',
+		location: 'Ingolstadt, Bavaria, Germany',
+		period: { from: new Date(2025, 0, 1) },
+		skills: getSkills('ts', 'python', 'bun-node', 'ai-automation', 'docker', 'linux'),
+		name: 'Co-Founder',
+		color: '#0ea5e9',
+		links: [
+			{ to: 'https://www.linkedin.com/in/nikita-friesen', label: 'LinkedIn', newTab: true },
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
+		],
+		logo: Assets.AiAutomation,
+		shortDescription: 'IT consulting agency. Enterprise automation and patent tooling.'
 	},
 	{
 		slug: 'grit-racing-software',
-		company: 'GRIT Racing & GRIT Auto',
-		description: `- Ship race-ops dashboards and telemetry overlays backed by Bun/Node services so pit crews and mobility teams share the same context.\n- Orchestrate LiveKit Agents that blend AI copilots with live data to brief remote engineers before, during, and after stints.\n- Automate Redis/Postgres data pipelines and GitHub Actions on Hetzner Kubernetes clusters hardened with Ansible playbooks.`,
+		company: 'GRIT Racing',
+		description: `- Race control platform with telemetry overlays, schedule tracking, and live pit crew data sync.\n- Wired LiveKit AI copilots into the stack for team briefings and race strategy.\n- Deployed to Hetzner K8s with Ansible playbooks and GitHub Actions CI/CD.\n- 50/50 revenue-share partnership.`,
 		contract: ContractType.PartTime,
-		type: 'Software & Operations Engineering',
+		type: 'Operations Engineering',
 		location: 'Remote, Germany',
-		period: { from: new Date(2024, 10, 1) },
+		period: { from: new Date(2024, 9, 1) },
 		skills: getSkills(
 			'svelte',
 			'ts',
-			'react-native',
 			'bun-node',
 			'fastify',
 			'data-stores',
@@ -60,24 +112,24 @@ const items: Array<Experience> = [
 			'linux',
 			'ux'
 		),
-		name: 'Software Engineer',
+		name: 'Ops Engineer',
 		color: '#7c3aed',
 		links: [
 			{ to: 'https://grit-auto.de/', label: 'GRIT Auto', newTab: true },
 			{ to: 'https://www.linkedin.com/in/nikita-friesen', label: 'LinkedIn', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.LiveKit,
-		shortDescription: "Building telemetry, media, and deployment tooling for GRIT's racing and mobility teams."
+		shortDescription: 'Race control platform with telemetry, AI copilots, and live pit crew sync.'
 	},
 	{
 		slug: 'hive-systems-frontend',
 		company: 'HIVE Systems',
-		description: `- Led the SvelteKit frontend for the drone fleet dashboard, delivering DAL-B informed monitoring views that ground every mission briefing.\n- Built mission control surfaces that blend telemetry, geofences, weather, and maintenance data so pilots share the same picture.\n- Co-designed UX patterns with avionics and compliance teams to keep the software trustworthy in the field.`,
+		description: `- Led the SvelteKit frontend for the drone fleet dashboard — ArcGIS 3D mapping, real-time telemetry, mission planning, geofence enforcement.\n- Built H.264 NAL/AU parsing for encrypted drone video feeds and YubiKey-based HSM integration for fleet security.\n- DAL-B certified avionics under DO-178C. Co-designed UX with compliance teams.`,
 		contract: ContractType.FullTime,
 		type: 'Software Engineering',
 		location: 'Nuremberg, Bavaria, Germany',
-		period: { from: new Date(2022, 9, 1), to: new Date(2024, 3, 15) },
+		period: { from: new Date(2022, 9, 1), to: new Date(2024, 2, 15) },
 		skills: getSkills('svelte', 'ts', 'websockets', 'drone-ops', 'geospatial', 'ux'),
 		name: 'Software Engineer',
 		color: '#ff9f1c',
@@ -89,15 +141,15 @@ const items: Array<Experience> = [
 				newTab: true
 			},
 			{ to: 'https://www.linkedin.com/in/nikita-friesen', label: 'LinkedIn', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.DroneOps,
-		shortDescription: 'Led the HIVE drone dashboard with realtime telemetry and operator-first UX.'
+		shortDescription: '3D GIS drone dashboard, encrypted video feeds, DO-178C avionics.'
 	},
 	{
 		slug: 'idl-software-intern',
 		company: 'IDL - Institute for Digital Learning',
-		description: `- Prototyped and shipped fixes across internal education platforms with Python and TypeScript.\n- Assisted senior engineers by refining UI flows and closing minor feature gaps on live systems.\n- Documented investigative work so teammates could resume debugging threads without downtime.`,
+		description: `- Built and fixed features on internal education platforms with Python and TypeScript.\n- Shipped UI improvements and closed feature gaps on live systems.`,
 		contract: ContractType.Internship,
 		type: 'Software Development Internship',
 		location: 'Eichstaett, Bavaria, Germany',
@@ -107,15 +159,15 @@ const items: Array<Experience> = [
 		color: '#3776ab',
 		links: [
 			{ to: 'https://www.linkedin.com/in/nikita-friesen', label: 'LinkedIn', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.Python,
-		shortDescription: 'Supported digital learning products with Python services and front-end refinements.'
+		shortDescription: 'Python and TypeScript work on education platforms.'
 	},
 	{
 		slug: 'freelance-artist',
 		company: 'Self-employed',
-		description: `- Deliver bespoke logos, apparel, and cover art for Gabrieli Gymnasium and independent musicians.\n- Run briefing sessions that translate early ideas into production-ready visual systems.\n- Manage end-to-end production, from sketches to print-ready files and stakeholder approvals.`,
+		description: `- Logos, apparel designs, and cover art for Gabrieli Gymnasium and independent musicians.\n- End-to-end production from sketches to print-ready files.`,
 		contract: ContractType.SelfEmployed,
 		type: 'Brand & Digital Design',
 		location: 'Eichstaett, Bavaria, Germany',
@@ -134,15 +186,15 @@ const items: Array<Experience> = [
 				label: 'Cover Art Portfolio',
 				newTab: true
 			},
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.VisualSuite,
-		shortDescription: 'Independent designer crafting visual identities, apparel, and cover art for schools and artists.'
+		shortDescription: 'Logos, apparel, and cover art for schools and musicians.'
 	},
 	{
 		slug: 'kober-red-cross',
 		company: 'KOBER GmbH',
-		description: `- Recruited German Red Cross members through door-to-door campaigns, adapting messaging to community needs.\n- Captured feedback loops that informed future outreach and enabled data-driven territory planning.`,
+		description: `- Door-to-door recruitment for the German Red Cross.\n- Adapted pitch to different communities, tracked results for territory planning.`,
 		contract: ContractType.Contract,
 		type: 'Field Outreach',
 		location: 'Heilbronn, Germany',
@@ -150,14 +202,14 @@ const items: Array<Experience> = [
 		skills: getSkills('ux'),
 		name: 'Field Advertising Specialist',
 		color: '#ef476f',
-		links: [{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }],
+		links: [{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }],
 		logo: Assets.Ux,
-		shortDescription: 'Drove membership growth for the German Red Cross through tailored community outreach.'
+		shortDescription: 'Door-to-door Red Cross membership recruitment.'
 	},
 	{
 		slug: 'sodastream-promoter',
 		company: 'SodaStream',
-		description: `- Orchestrated promotional events in high-traffic retail locations, pairing demos with measurable sales targets.\n- Elevated brand visibility by experimenting with messaging and live feedback.`,
+		description: `- Ran product demos and promotional events in Munich retail locations.\n- Hit sales targets through hands-on demos and direct customer interaction.`,
 		contract: ContractType.Contract,
 		type: 'Merchandising & Promotion',
 		location: 'Munich, Bavaria, Germany',
@@ -165,14 +217,14 @@ const items: Array<Experience> = [
 		skills: getSkills('ux'),
 		name: 'Merchandiser & Promoter',
 		color: '#118ab2',
-		links: [{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }],
+		links: [{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }],
 		logo: Assets.Ux,
-		shortDescription: "Designed in-store experiences that expanded SodaStream's reach across Munich."
+		shortDescription: 'Product demos and promotions in Munich retail.'
 	},
 	{
 		slug: 'expert-ecommerce-intern',
 		company: 'expert e-Commerce GmbH',
-		description: `- Supported appliance sales and customer consultations, uncovering needs before recommending solutions.\n- Conducted local market research to refine positioning and promotional tactics.`,
+		description: `- Appliance sales and customer consultations.\n- Local market research for positioning and promos.`,
 		contract: ContractType.Internship,
 		type: 'Sales Internship',
 		location: 'Eichstaett, Bavaria, Germany',
@@ -180,9 +232,9 @@ const items: Array<Experience> = [
 		skills: getSkills('ux'),
 		name: 'Sales Intern',
 		color: '#06d6a0',
-		links: [{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }],
+		links: [{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }],
 		logo: Assets.Ux,
-		shortDescription: 'Strengthened customer relationships and refined sales tactics for expert e-Commerce.'
+		shortDescription: 'Sales internship — appliance consulting and market research.'
 	}
 ];
 

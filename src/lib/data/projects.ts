@@ -4,11 +4,29 @@ import type { Project } from './types';
 
 const items: Array<Project> = [
 	{
+		slug: 'aicoyo-voice-saas',
+		color: '#145B7A',
+		description: `### What I built\n- Production SaaS for AI voice agents. Solo-built from scratch — real-time voice pipeline (STT → LLM → TTS), visual flow builder with 15+ node types, multi-tenant platform with RBAC and live call monitoring.\n- Full infrastructure: Docker/K8s, SIP telephony, WebRTC via LiveKit, warm transfer between AI and humans, vector memory via pgvector.\n- Brand, landing page, and all design assets done by me as well.\n\n### Results\n- 2 paying customers. 80%+ margin. 100% uptime since launch.`,
+		shortDescription:
+			'Production SaaS for AI voice agents. Solo-built. Paying customers.',
+		links: [
+			{ to: 'https://aicoflow.com', label: 'AICOYO', newTab: true },
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
+		],
+		logo: Assets.AiAutomation,
+		name: 'AICOYO',
+		period: {
+			from: new Date(2024, 3, 1)
+		},
+		skills: getSkills('svelte', 'ts', 'bun-node', 'fastify', 'data-stores', 'docker', 'kubernetes', 'livekit', 'telephony', 'oauth', 'websockets', 'ai-automation'),
+		type: 'Voice AI SaaS'
+	},
+	{
 		slug: 'hive-drone-dashboard',
 		color: '#ff9f1c',
-		description: `### What I built\n- Led the SvelteKit frontend for HIVE's drone fleet dashboard, stitching telemetry, maintenance, and mission tooling into one interface.\n- Designed mission control views that layer geofences, weather, and alerts so pilots react before issues escalate.\n- Partnered with avionics teams to respect DAL-B obligations while keeping the UX fast and legible.\n\n### Impact\n- Operators plan and supervise flights from one dependable control centre.\n- Reduced back-and-forth between pilots and compliance thanks to shared real-time context.`,
+		description: `### What I built\n- Led the SvelteKit frontend for HIVE's drone fleet dashboard — ArcGIS 3D mapping, real-time telemetry, mission planning, geofence enforcement.\n- H.264 NAL/AU parsing for encrypted drone video feeds. YubiKey-based HSM integration for fleet security.\n- Co-designed UX with avionics and compliance teams under DAL-B / DO-178C requirements.\n\n### Results\n- Single control centre for flight planning, monitoring, and compliance.\n- Pilots and compliance teams share the same real-time picture.`,
 		shortDescription:
-			'Realtime fleet management dashboard with compliance-ready UX and telemetry overlays.',
+			'3D GIS drone dashboard with encrypted video, ArcGIS mapping, and DO-178C compliance.',
 		links: [
 			{ to: 'https://hive-systems.de/', label: 'HIVE Systems', newTab: true },
 			{
@@ -16,13 +34,13 @@ const items: Array<Project> = [
 				label: 'Dashboard Video',
 				newTab: true
 			},
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.DroneOps,
 		name: 'HIVE Console',
 		period: {
 			from: new Date(2022, 9, 1),
-			to: new Date(2024, 3, 15)
+			to: new Date(2024, 2, 15)
 		},
 		skills: getSkills('svelte', 'ts', 'websockets', 'drone-ops', 'geospatial', 'ux'),
 		type: 'Drone Operations'
@@ -30,17 +48,18 @@ const items: Array<Project> = [
 	{
 		slug: 'mitdenkt-ops-platform',
 		color: '#f0b429',
-		description: `### What I built\n- Engineered the ZVT POS integration that connects field payment terminals to scheduling and reporting through a resilient WebSocket bridge.\n- Delivered a Logto-backed OAuth2/OIDC admin console that unifies tenant provisioning, access controls, and audit trails.\n- Automated Docker-based deployments and CI/CD pipelines powering mitdenkt boxes and Bun/Fastify services.\n\n### Impact\n- Service teams run payments, telephony, and scheduling from one playbook instead of juggling tools.`,
+		description: `### What I built\n- ZVT POS integration — custom WebSocket bridge between field payment terminals and Bun/Fastify backend.\n- Logto-backed SSO admin console with tenant provisioning, RBAC, and audit trails.\n- Docker deployments + CI/CD pipelines for mitdenkt boxes and on-prem telephony hardware.\n\n### Results\n- Service teams run payments, telephony, and scheduling from one system instead of juggling tools.`,
 		shortDescription:
-			"Unified POS, SSO, and operational tooling for mitdenkt's connected service platform.",
+			'POS integration, SSO, and ops tooling for field service teams.',
 		links: [
 			{ to: 'https://mitdenkt.de/', label: 'mitdenkt', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.Telephony,
 		name: '#mitdenkt Ops',
 		period: {
-			from: new Date(2024, 8, 1)
+			from: new Date(2024, 8, 1),
+			to: new Date(2026, 1, 1)
 		},
 		skills: getSkills('ts', 'bun-node', 'fastify', 'data-stores', 'docker', 'ci-cd', 'telephony', 'oauth', 'websockets'),
 		type: 'Systems Integration'
@@ -48,33 +67,34 @@ const items: Array<Project> = [
 	{
 		slug: 'mitdenkt-ai-assistants',
 		color: '#ffdd00',
-		description: `### What I built\n- Designed pragmatic AI call assistants that answer routine questions, surface context, and escalate complex cases to humans.\n- Crafted prompt strategies, guardrails, and monitoring so operators see confidence, transcripts, and follow-up tasks.\n- Hardened the surrounding Bun/Fastify services with typed clients, authentication layers, and structured logging.\n\n### Impact\n- Reduced manual call load while keeping operators in control of voice interactions.`,
-		shortDescription: 'Guardrailed AI call assistants that respect human escalation paths.',
+		description: `### What I built\n- AI calling agents that handle routine calls, surface context, and hand off to humans when confidence drops.\n- Prompt engineering, guardrails, and monitoring — operators see confidence scores, transcripts, and follow-up tasks.\n- Hardened Bun/Fastify services with typed clients, auth layers, and structured logging.\n\n### Results\n- Cut manual call load while keeping operators in control.`,
+		shortDescription: 'AI calling agents with human handoff and operator dashboards.',
 		links: [
 			{ to: 'https://mitdenkt.de/', label: 'mitdenkt', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.AiAutomation,
 		name: '#mitdenkt AI',
 		period: {
-			from: new Date(2024, 8, 1)
+			from: new Date(2024, 8, 1),
+			to: new Date(2026, 1, 1)
 		},
 		skills: getSkills('ai-automation', 'ts', 'bun-node', 'fastify', 'data-stores', 'telephony', 'oauth'),
-		type: 'Autonomy'
+		type: 'Voice AI'
 	},
 	{
 		slug: 'grit-control-room',
 		color: '#7c3aed',
-		description: `### What I built\n- Crafted a race control experience for GRIT Racing & GRIT Auto that blends telemetry overlays, schedule tracking, and media review into one interface.\n- Wired LiveKit Agents into Bun/Fastify backends so AI copilots can brief remote engineers and sync with trackside crews in real time.\n- Deployed the stack to Hetzner Kubernetes clusters hardened with GitHub Actions pipelines and Ansible playbooks.\n\n### Impact\n- Keeps racing and mobility teams in sync before, during, and after events without juggling disparate tools.`,
-		shortDescription: 'Race control tooling combining telemetry, media, and ops dashboards for GRIT teams.',
+		description: `### What I built\n- Race control platform for GRIT Racing — telemetry overlays, schedule tracking, live pit crew data sync.\n- LiveKit AI copilots wired into Bun/Fastify backends for team briefings and race strategy.\n- Deployed to Hetzner K8s with GitHub Actions and Ansible.\n\n### Results\n- Racing and mobility teams stay in sync before, during, and after events from one interface.`,
+		shortDescription: 'Race control with telemetry, AI copilots, and live crew sync.',
 		links: [
 			{ to: 'https://grit-auto.de/', label: 'GRIT Auto', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.LiveKit,
 		name: 'GRIT Hub',
 		period: {
-			from: new Date(2024, 10, 1)
+			from: new Date(2024, 9, 1)
 		},
 		skills: getSkills(
 			'svelte',
@@ -92,30 +112,13 @@ const items: Array<Project> = [
 		type: 'Operations Software'
 	},
 	{
-		slug: 'aico-flow',
-		color: '#0ea5e9',
-		description: `### What I built\n- AICO Flow is my personal sandbox for automation workflows that blend AI guardrails, orchestration, and human oversight.\n- Runs on Bun/Fastify with Drizzle and Redis so flows stay fast while data remains structured.\n- Experiments with Svelte frontends and LiveKit Agents to explore how voice, video, and AI copilots plug into operations tools.\n\n### Impact\n- Serves as a proving ground for ideas I later harden for clients and employers.`,
-		shortDescription: 'Personal automation lab exploring pragmatic AI workflows and collaboration surfaces.',
-		links: [
-			{ to: 'https://landing.aicoflow.xyz', label: 'AICO Flow', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
-		],
-		logo: Assets.AiAutomation,
-		name: 'AICO Flow',
-		period: {
-			from: new Date(2024, 9, 1)
-		},
-		skills: getSkills('ts', 'bun-node', 'fastify', 'data-stores', 'livekit', 'ai-automation', 'ux'),
-		type: 'Autonomy R&D'
-	},
-	{
 		slug: 'stem-globe',
 		color: '#2dd4bf',
-		description: `### What I built\n- Mapped global STEM initiatives using ArcGIS to create an interactive globe with stories, filters, and media embeds.\n- Designed the UX so educators can browse by continent, theme, or project maturity without feeling lost.\n- Tuned performance and accessibility so the experience works smoothly on classroom hardware.\n\n### Impact\n- Gives students and teachers a visual way to explore STEM programmes beyond their local bubble.`,
-		shortDescription: 'ArcGIS-powered globe showcasing STEM initiatives with approachable storytelling.',
+		description: `### What I built\n- Interactive ArcGIS globe mapping global STEM initiatives with stories, filters, and media embeds.\n- UX designed for educators — browse by continent, theme, or project maturity.\n- Tuned for performance on classroom hardware.\n\n### Results\n- Students and teachers explore STEM programmes beyond their local context.`,
+		shortDescription: 'ArcGIS globe showcasing global STEM initiatives.',
 		links: [
 			{ to: 'https://gitkubikon.github.io/STEMGlobe/', label: 'STEM Globe', newTab: true },
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.Geospatial,
 		name: 'STEM Globe',
@@ -128,8 +131,8 @@ const items: Array<Project> = [
 	{
 		slug: 'gabrieli-branding',
 		color: '#ffa62b',
-		description: `### What I built\n- Produced logo suites, merchandise, and campaign visuals for the Gabrieli Gymnasium student body.\n- Facilitated feedback loops with student councils to lock typography, palettes, and sizing for print.\n- Extended the style guide to social templates and music cover art for local artists.\n\n### Impact\n- Helped the school community present a consistent identity across apparel, events, and digital channels.`,
-		shortDescription: 'Visual identity work for Gabrieli Gymnasium and local artists.',
+		description: `### What I built\n- Logo suites, merchandise, and campaign visuals for Gabrieli Gymnasium.\n- Style guide extended to social templates and music cover art for local artists.\n\n### Results\n- Consistent visual identity across apparel, events, and digital channels.`,
+		shortDescription: 'Branding, merch, and cover art for Gabrieli Gymnasium.',
 		links: [
 			{
 				to: 'https://www.gabrieli-gymnasium.de/menschen/schuelervertretung/schulkleidung/',
@@ -141,7 +144,7 @@ const items: Array<Project> = [
 				label: 'Cover Art Portfolio',
 				newTab: true
 			},
-			{ to: 'mailto:nikitafriesen74@gmail.com', label: 'Email' }
+			{ to: 'mailto:nikita@aicoflow.com', label: 'Email' }
 		],
 		logo: Assets.VisualSuite,
 		name: 'Gabrieli Brand Suite',

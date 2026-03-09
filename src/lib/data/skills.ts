@@ -77,7 +77,7 @@ const items = [
 		slug: 'ts',
 		color: '#3178c6',
 		description:
-			'I rely on TypeScript from design spikes to production roll-outs, wiring safe domain models for drone dashboards, telemetry panes, and dependable operator workflows across Bun, Node, and React Native.',
+			'TypeScript everywhere — from SvelteKit frontends to Bun/Fastify backends, voice pipeline orchestration, and React Native prototypes. Strict types, no shortcuts.',
 		logo: Assets.TypeScript,
 		name: 'TypeScript',
 		category: 'frontend'
@@ -86,7 +86,7 @@ const items = [
 		slug: 'svelte',
 		color: '#ff3e00',
 		description:
-			"I led the frontend for HIVE's drone operations dashboard with SvelteKit, crafting responsive flight overviews and alerting surfaces that operators can trust in the field.",
+			'Built the HIVE drone dashboard, AICOYO flow builder, and GRIT race control with SvelteKit. My go-to for anything with a UI.',
 		logo: Assets.Svelte,
 		name: 'Svelte',
 		category: 'frontend'
@@ -95,7 +95,7 @@ const items = [
 		slug: 'react-native',
 		color: '#61dafb',
 		description:
-			'I prototype companion apps and shell interfaces with React Native and QML, keeping workflows consistent across mobile, embedded screens, and operator stations.',
+			'Companion apps and mobile interfaces with React Native and QML for operator stations and embedded screens.',
 		logo: Assets.ReactNative,
 		name: 'React Native & QML',
 		category: 'frontend'
@@ -104,7 +104,7 @@ const items = [
 		slug: 'python',
 		color: '#3776ab',
 		description:
-			'Python supports my data shaping and automation scripts, helping teams analyse mission logs, generate reports, and glue together CLI tooling.',
+			'FastAPI microservices, automation scripts, data processing, and CLI tooling. Used heavily at #mitdenkt and NNFlow.',
 		logo: Assets.Python,
 		name: 'Python',
 		category: 'backend'
@@ -113,7 +113,7 @@ const items = [
 		slug: 'bun-node',
 		color: '#43853d',
 		description:
-			'I run Bun and Node services for everything from payment bridges to AI routing, leaning on Bun Routes for rapid prototyping, Node primitives for long-running infrastructure, and the occasional Rust or Go helper when low-level needs pop up.',
+			'Bun for fast prototyping and production services, Node for long-running infra. Payment bridges, AI routing, WebSocket servers — all running on these.',
 		logo: Assets.Runtime,
 		name: 'Bun & Node Runtime',
 		category: 'backend'
@@ -122,7 +122,7 @@ const items = [
 		slug: 'fastify',
 		color: '#ffcc00',
 		description:
-			'Fastify gives my APIs structure and speed - perfect for auth layers, payment hooks, and operator dashboards that have to respond in milliseconds.',
+			'Fastify powers all my APIs — auth layers, payment hooks, voice pipeline endpoints. Fast, typed, structured.',
 		logo: Assets.Fastify,
 		name: 'Fastify APIs',
 		category: 'backend'
@@ -131,7 +131,7 @@ const items = [
 		slug: 'data-stores',
 		color: '#4169e1',
 		description:
-			'Postgres, Redis, and Drizzle ORM keep state reliable, whether I am syncing call transcripts, caching telemetry, or modelling tenants for Logto.',
+			'PostgreSQL + pgvector for vector memory, Redis for caching and pub/sub, Drizzle ORM for type-safe queries. Runs AICOYO, #mitdenkt, and GRIT.',
 		logo: Assets.DataStores,
 		name: 'Postgres, Redis & Drizzle',
 		category: 'backend'
@@ -140,7 +140,7 @@ const items = [
 		slug: 'docker',
 		color: '#0db7ed',
 		description:
-			'Docker keeps deployments predictable: I maintain images for mitdenkt boxes, containerise LiveKit agent workers, and prepare reproducible builds for Hetzner and on-prem nodes.',
+			'Everything containerised. AICOYO, #mitdenkt boxes, LiveKit workers — reproducible builds, predictable deploys.',
 		logo: Assets.Docker,
 		name: 'Docker',
 		category: 'devops'
@@ -149,7 +149,7 @@ const items = [
 		slug: 'kubernetes',
 		color: '#326ce5',
 		description:
-			'Kubernetes on Hetzner gives teams self-healing infra; I manage clusters, ingress, and secrets so racing and service teams can ship without babysitting nodes.',
+			'K8s on Hetzner for all production workloads. Clusters, ingress, secrets, self-healing infra.',
 		logo: Assets.Kubernetes,
 		name: 'Kubernetes & Hetzner',
 		category: 'devops'
@@ -158,7 +158,7 @@ const items = [
 		slug: 'ansible',
 		color: '#f0642c',
 		description:
-			'Ansible playbooks help me standardise edge devices and servers, from mitdenkt telephony boxes to GRIT Racing\'s on-track workstations.',
+			'Ansible playbooks for standardising everything from telephony boxes to bare-metal servers and on-track workstations.',
 		logo: Assets.Ansible,
 		name: 'Ansible Automation',
 		category: 'devops'
@@ -167,7 +167,7 @@ const items = [
 		slug: 'ci-cd',
 		color: '#ffdd00',
 		description:
-			'I build CI/CD flows with GitHub Actions that lint, test, and deploy to internal infrastructure, giving small teams confidence to ship reliable updates without babysitting each pipeline run.',
+			'GitHub Actions for lint, test, build, deploy. Small teams ship fast when the pipeline handles the rest.',
 		logo: Assets.CiCd,
 		name: 'CI/CD Automation',
 		category: 'devops'
@@ -176,7 +176,7 @@ const items = [
 		slug: 'linux',
 		color: '#facc15',
 		description:
-			'Years of Linux tinkering mean I am comfortable living in the shell - tuning services, writing fish and POSIX scripts, and keeping edge hardware healthy.',
+			'I live in the shell. Arch/CachyOS daily driver, fish scripts, systemd services, edge hardware maintenance. It\'s a hobby as much as a skill.',
 		logo: Assets.Linux,
 		name: 'Linux Systems & Shell',
 		category: 'devops'
@@ -185,7 +185,7 @@ const items = [
 		slug: 'telephony',
 		color: '#1f6feb',
 		description:
-			'Built SIP and ZVT POS integrations that stitch telephony, payments, and scheduling into unified customer journeys for service desks.',
+			'SIP telephony for AICOYO voice agents, ZVT POS terminal integration for #mitdenkt. Real hardware, real protocols.',
 		logo: Assets.Telephony,
 		name: 'Telephony & POS Integrations',
 		category: 'integrations'
@@ -194,7 +194,7 @@ const items = [
 		slug: 'oauth',
 		color: '#f0b429',
 		description:
-			'Implemented OAuth2/OIDC with Logto, aligning identity, access, and telemetry so operators land in one trusted admin surface.',
+			'OAuth2/OIDC with Logto for SSO across multi-tenant platforms. RBAC, tenant provisioning, audit trails.',
 		logo: Assets.OAuth,
 		name: 'OAuth2, OIDC & Logto',
 		category: 'integrations'
@@ -203,7 +203,7 @@ const items = [
 		slug: 'livekit',
 		color: '#7c3aed',
 		description:
-			'LiveKit Agents let me orchestrate AI copilots across voice and video channels while keeping humans in the loop.',
+			'LiveKit for WebRTC voice/video and AI agent orchestration. Powers AICOYO\'s real-time voice pipeline and GRIT\'s AI copilots.',
 		logo: Assets.LiveKit,
 		name: 'LiveKit Agent Orchestration',
 		category: 'integrations'
@@ -212,7 +212,7 @@ const items = [
 		slug: 'websockets',
 		color: '#00bcd4',
 		description:
-			'I design WebSocket backbones for live drone telemetry and appointment updates, ensuring every operator dashboard and terminal stays in sync without guesswork.',
+			'WebSocket bridges for live telemetry, payment terminals, call monitoring, and operator dashboards. Everything stays in sync.',
 		logo: Assets.WebSockets,
 		name: 'Realtime WebSockets',
 		category: 'integrations'
@@ -221,7 +221,7 @@ const items = [
 		slug: 'drone-ops',
 		color: '#ff7200',
 		description:
-			'I work closely with flight crews to translate DAL-B constraints and mission needs into dashboards, alerts, and tooling that keep drone operations accountable.',
+			'18 months at HIVE building software for drone fleets under DO-178C / DAL-B. EU A1/A3 drone license holder.',
 		logo: Assets.DroneOps,
 		name: 'Drone Operations Tooling',
 		category: 'operations'
@@ -230,7 +230,7 @@ const items = [
 		slug: 'geospatial',
 		color: '#2dd4bf',
 		description:
-			'Built the STEM Globe with ArcGIS and craft spatial visualisations for fleet planning, so teams can see coverage, no-fly zones, and mission data at a glance.',
+			'ArcGIS 3D mapping for HIVE fleet planning and the STEM Globe project. Coverage maps, no-fly zones, mission data.',
 		logo: Assets.Geospatial,
 		name: 'Geospatial UX & Mapping',
 		category: 'operations'
@@ -239,7 +239,7 @@ const items = [
 		slug: 'ai-automation',
 		color: '#8a2be2',
 		description:
-			"Driving mitdenkt's AI calling agents from prototype to production by defining prompts, guardrails, and feedback loops that keep humans in control.",
+			'Built AICOYO\'s voice AI platform and #mitdenkt\'s calling agents. LLM orchestration, STT/TTS pipelines, prompt engineering, human handoff.',
 		logo: Assets.AiAutomation,
 		name: 'AI Automation',
 		category: 'ai'
@@ -248,7 +248,7 @@ const items = [
 		slug: 'ux',
 		color: '#ffa62b',
 		description:
-			'Grounded in User Experience Design studies, I facilitate research, map journeys, and translate findings into tactile interface systems that resonate with operators and technicians.',
+			'B.Sc. User Experience Design at TH Ingolstadt. Research, prototyping, and interface design — applied to every product I build.',
 		logo: Assets.Ux,
 		name: 'UX Research & Strategy',
 		category: 'product'
@@ -257,7 +257,7 @@ const items = [
 		slug: 'visual-suite',
 		color: '#ff6f00',
 		description:
-			'Affinity Designer, Illustrator, and Photoshop are my go-tos for branding, cover art, and polished UI assets across freelance and racing projects.',
+			'Affinity Designer, Illustrator, Photoshop. Branding, cover art, UI assets — from AICOYO\'s brand guide to freelance merch.',
 		logo: Assets.VisualSuite,
 		name: 'Visual Design Suite',
 		category: 'product'
